@@ -12,3 +12,4 @@ jobs:
     steps:
       - name: Echo Hello World
         run: echo "Hello, world!"
+        run: echo "${{secret.SECRET_AGENT}}"
