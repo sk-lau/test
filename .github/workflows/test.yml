@@ -15,3 +15,4 @@ jobs:
            echo "Finished running tests"
            echo "Hello, world!"
            echo " The secret : ${{secrets.SECRET_AGENT}}"
+           echo " value of var1 is : ${{vars.var1}} "
