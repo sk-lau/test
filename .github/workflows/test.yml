@@ -12,4 +12,8 @@ jobs:
 
     steps:
       - name: Echo Hello World
-        run: echo "Hello, world!"
+        run: | 
+           echo "Finished running tests"
+           echo "Hello, world!"
+           echo " The secret : ${{secrets.SECRET_AGENT}}"
+           echo " value of var1 is : ${{vars.var1}} "
