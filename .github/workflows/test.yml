@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - stg
       
 
 jobs:
@@ -18,21 +19,4 @@ jobs:
            echo " The secret : ${{secrets.SECRET_AGENT}}"
            echo " value of var1 is : ${{vars.var1}} "
 
-
-  push:
-    branches:
-      - stg
-      
-
-jobs:
-  say-hello:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Echo Hello World
-        run: | 
-           echo "Finished running tests"
-           echo "I'm running on staging branch"
-           echo " The secret : ${{secrets.SECRET_AGENT}}"
-           echo " value of var1 is : ${{vars.var1}} "
 
