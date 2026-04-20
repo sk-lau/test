@@ -1,0 +1,36 @@
+name: Branch-based Pipeline
+
+on:
+  push:
+    branches:
+      - main
+      - stg
+
+jobs:
+  main_pipeline:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run production pipeline
+        run: |
+          echo "Running MAIN branch pipeline"
+          # Add your production steps here
+          # e.g., build, test, deploy
+
+  staging_pipeline:
+    if: github.ref == 'refs/heads/stg'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run staging pipeline
+        run: |
+          echo "Running STG branch pipeline"
+          # Add your staging steps here
+          # e.g., build, test, deploy to staging
