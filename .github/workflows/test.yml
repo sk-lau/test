@@ -18,5 +18,8 @@ jobs:
            echo "Hello, world!"
            echo " The secret : ${{secrets.SECRET_AGENT}}"
            echo " value of var1 is : ${{vars.var1}} "
+           echo ${{vars.ENV}} > testfile
+           echo " this is content of testfile : "
+           cat testfile
 
 
